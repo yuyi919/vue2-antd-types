@@ -1,6 +1,6 @@
 {
   "name": "@yuyi919/vue2-antd-types",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/yuyi919/vue2-antd-types",
@@ -56,5 +56,8 @@
     "prettier-plugin-packagejson": "^2.2.18",
     "typescript": "^4.5.2",
     "vue": "^2.7.12"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
