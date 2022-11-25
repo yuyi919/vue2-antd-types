@@ -1,55 +1,60 @@
 {
-    "name": "vue2-antd-types",
-    "version": "0.0.0",
-    "description": "",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/yuyi919/vue2-antd-types.git"
-    },
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "scripts": {
-        "test": "echo DODO",
-        "build": "tsc",
-        "lint:check": "eslint . --ext .ts,.tsx",
-        "lint": "npm run lint:check -- --fix",
-        "_format": "prettier '**/*.{ts,tsx,json,md}'",
-        "format": "npm run _format -- --write",
-        "format:check": "npm run _format -- --list-different"
-    },
-    "lint-staged": {
-        "*.{ts,tsx}": [
-            "eslint --fix"
-        ],
-        "*.{ts,tsx,json,md}": [
-            "prettier --write"
-        ]
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged -v"
-        }
-    },
-    "author": "u/yuyi919",
-    "license": "MIT",
-    "files": [
-        "src/",
-        "!src/test/",
-        "dist/",
-        "!dist/test/",
-        "!dist/tsconfig.tsbuildinfo"
-    ],
-    "keywords": [],
-    "homepage": "https://github.com/yuyi919/vue2-antd-types",
-    "devDependencies": {
-        "@types/node": "^16.4.9",
-        "typescript": "^4.3.5",
-        "@typescript-eslint/eslint-plugin": "^4.28.5",
-        "@typescript-eslint/parser": "^4.28.5",
-        "eslint": "^7.32.0",
-        "eslint-config-prettier": "^8.3.0",
-        "husky": "^4.3.8",
-        "lint-staged": "^11.1.1",
-        "prettier": "^2.3.2"
+  "name": "@yuyi919/vue2-antd-types",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/yuyi919/vue2-antd-types",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuyi919/vue2-antd-types.git"
+  },
+  "license": "MIT",
+  "author": "u/yuyi919",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "src/",
+    "!src/test/",
+    "dist/",
+    "!dist/test/",
+    "!dist/tsconfig.tsbuildinfo"
+  ],
+  "scripts": {
+    "_format": "prettier '**/*.{ts,tsx,json,md}'",
+    "build": "tsc",
+    "format": "npm run _format -- --write",
+    "format:check": "npm run _format -- --list-different",
+    "lint": "npm run lint:check -- --fix",
+    "lint:check": "eslint . --ext .ts,.tsx",
+    "prepare": "husky install",
+    "test": "echo DODO"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged -v"
     }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{ts,tsx,json,md}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.9",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "lodash-es": "^4.17.21",
+    "prettier": "^2.7.1",
+    "prettier-plugin-organize-imports": "^3.0.0",
+    "prettier-plugin-packagejson": "^2.2.18",
+    "typescript": "^4.5.2",
+    "vue": "^2.7.12"
+  }
 }

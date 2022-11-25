@@ -14,12 +14,14 @@ jobs:
     if: ${{ !github.event.created && github.repository != 'garronej/ts-ci' }}
     steps:
     - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-    - uses: bahmutov/npm-install@v1
-    - name: If this step fails run 'yarn lint' and 'yarn format' then commit again.
-      run: |
-        yarn lint:check
-        yarn format:check
+    - uses: pnpm/action-setup@v2.0.1
+      with:
+        version: 7
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'pnpm'
   test:
     runs-on: ${{ matrix.os }}
     needs: test_lint
@@ -33,9 +35,11 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node }}
-    - uses: bahmutov/npm-install@v1
-    - run: yarn build
-    - run: yarn test
+    - uses: pnpm/action-setup@v2.0.1
+      with:
+        version: 7
+    - run: pnpm build
+    - run: pnpm test
 
   check_if_version_upgraded:
     name: Check if version upgrade
@@ -97,8 +101,10 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         registry-url: https://registry.npmjs.org/
-    - uses: bahmutov/npm-install@v1
-    - run: yarn build
+    - uses: pnpm/action-setup@v2.0.1
+      with:
+        version: 7
+    - run: pnpm build
     - run: npx -y -p denoify@1.3.0 enable_short_npm_import_path
       env:
         DRY_RUN: "0"
