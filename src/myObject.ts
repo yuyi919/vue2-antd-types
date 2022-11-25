@@ -1,1 +1,1 @@
-export const myObject = { "p": "foo" };
+export const myObject = { p: "foo" };

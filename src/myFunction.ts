@@ -1,3 +1,3 @@
 export function myFunction() {
-    return ["a", "b", "c"];
+  return ["a", "b", "c"];
 }
