@@ -1,6 +1,6 @@
 {
   "name": "@yuyi919/vue2-antd-types",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/yuyi919/vue2-antd-types",
@@ -35,10 +35,10 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "src/*.{ts,tsx}": [
       "eslint --fix"
     ],
-    "*.{ts,tsx,json,md}": [
+    "src/*.{ts,tsx,json,md}": [
       "prettier --write"
     ]
   },
