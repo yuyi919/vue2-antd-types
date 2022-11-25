@@ -42,7 +42,7 @@ jobs:
 
   check_if_version_upgraded:
     name: Check if version upgrade
-    needs: test
+    # needs: test
     # When someone forks the repo and opens a PR we want to enables the tests to be run (the previous jobs)
     # but obviously only us should be allowed to release.
     # In the following check we make sure that we own the branch this CI workflow is running on before continuing.
