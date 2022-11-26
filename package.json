@@ -1,6 +1,6 @@
 {
   "name": "@yuyi919/vue2-antd-types",
-  "version": "0.0.25",
+  "version": "0.0.27",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/yuyi919/vue2-antd-types",
@@ -14,7 +14,7 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/",
+    "dist",
     "!dist/test/",
     "!dist/tsconfig.tsbuildinfo"
   ],
