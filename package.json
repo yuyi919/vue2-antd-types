@@ -1,6 +1,6 @@
 {
   "name": "@yuyi919/vue2-antd-types",
-  "version": "0.0.18",
+  "version": "0.0.1",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/yuyi919/vue2-antd-types",
@@ -31,7 +31,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged -v"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
@@ -42,10 +42,14 @@
       "prettier --write"
     ]
   },
+  "dependencies": {
+    "@yuyi919/shared-types": "^0.0.11"
+  },
   "devDependencies": {
     "@types/node": "^16.4.9",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",
+    "dts-bundle-generator": "^7.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "husky": "^8.0.1",

@@ -1,2 +1,2 @@
-export * from "./myFunction";
-export * from "./myObject";
+export * from "./ExcludeVueTypes";
+export * from "./helper";
