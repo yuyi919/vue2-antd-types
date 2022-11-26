@@ -1,6 +1,6 @@
 {
   "name": "@yuyi919/vue2-antd-types",
-  "version": "0.0.23",
+  "version": "0.0.25",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/yuyi919/vue2-antd-types",
@@ -10,8 +10,9 @@
   },
   "license": "MIT",
   "author": "yuyi919",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/",
     "!dist/test/",
