@@ -3,6 +3,7 @@ import {
   ComponentComputedOptions,
   ComponentCustomProperties,
   ComponentMethodOptions,
+  VueConstructor,
 } from "vue";
 import {
   ComponentOptionsBase,
@@ -86,6 +87,45 @@ export type VueComponent2<
   Emits = Types.Recordable,
   ScopedSlots = Types.Recordable,
   Public = Types.Recordable,
-> = InternalVueComponent2<IProps, Emits, ScopedSlots, Public>;
+  VueType extends VueConstructor = VueConstructor
+> = InternalVueComponent2<IProps, Emits, ScopedSlots, Public> & VueType;
 
 export type { TypedPropGroup };
+
+export type EventHandler<E> = [E] extends [(...args: any[]) => any]
+  ? E
+  : (payload: E) => any;
+export type EventHandlers<E> = {
+  [K in keyof E]?: EventHandler<E[K]> | EventHandler<E[K]>[];
+};
+export type TypeTsxProps<
+  Props extends Types.Recordable,
+  Events extends Types.Recordable = Types.Recordable,
+  ScopedSlots extends Types.Recordable = Types.Recordable,
+  Attributes extends Types.Recordable = Types.Recordable,
+> = InnerTypeTsxProps<Props, EventHandlers<Events>, ScopedSlots, Attributes>;
+
+// type a = TypeTsxProps<Types.Recordable, { a: 1 }>["onA"];
+// type b = EventHandler<1> | EventHandler<1>[];
+
+type InnerTypeTsxProps<
+  Props extends Types.Recordable,
+  Events extends Types.Recordable = Types.Recordable,
+  ScopedSlots extends Types.Recordable = Types.Recordable,
+  Attributes extends Types.Recordable = Types.Recordable,
+> = Attributes &
+  Props &
+  TsxOnEvents<Events> & {
+    attrs?: Attributes;
+    on?: Events;
+    props?: Partial<Props> & { [key: string]: any };
+    model?: {
+      value?: any;
+      callback?: (...args: any) => any;
+    };
+    vModel?: {
+      value?: any;
+      callback?: (...args: any) => any;
+    };
+    scopedSlots?: InnerScopedSlots<ScopedSlots>;
+  };
