@@ -4,7 +4,8 @@ import { TreeNodeValue } from "ant-design-vue/types/tree-select";
 import { VCProps, VueComponent2 } from "../../helper";
 import { TreeNode } from "./TreeNode";
 
-export interface ITreeProps extends Omit<VCProps<AntTree, false>, "blur" | "focus"> {}
+export interface ITreeProps
+  extends Omit<VCProps<AntTree, false>, "blur" | "focus"> {}
 export interface ITreeEvents {
   change: TreeNodeValue;
   blur: MouseEvent;

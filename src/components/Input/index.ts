@@ -1,8 +1,14 @@
-import { Input, IInputPublicMembers, IInputProps, IInputEvents } from "ant-design-vue";
+import {
+  IInputEvents,
+  IInputProps,
+  IInputPublicMembers,
+  Input,
+} from "ant-design-vue";
 import { TypeTsxProps, VCProps } from "../../helper";
 
 declare module "ant-design-vue/types/ant-design-vue.d" {
-  export interface IInputProps extends Omit<VCProps<Input, false>, "blur" | "focus"> {
+  export interface IInputProps
+    extends Omit<VCProps<Input, false>, "blur" | "focus"> {
     /**
      * 占位符
      * @default ""
@@ -29,8 +35,8 @@ declare module "ant-design-vue/types/input/input.d" {
   }
 }
 
-export { Input };
 export * from "./group";
 export * from "./password";
 export * from "./search";
 export * from "./textarea";
+export { Input };

@@ -1,4 +1,3 @@
-import { getPropsClass, ResolveSubModule, TypeTsxProps, VCProps } from "../helper";
 import {
   Button,
   IButtonEvents,
@@ -7,6 +6,12 @@ import {
   IButtonProps,
   IButtonPublicMembers,
 } from "ant-design-vue";
+import {
+  getPropsClass,
+  ResolveSubModule,
+  TypeTsxProps,
+  VCProps,
+} from "../helper";
 
 declare module "ant-design-vue/types/ant-design-vue.d" {
   export interface IButtonProps extends VCProps<Omit<Button, "type">, false> {
@@ -17,7 +22,8 @@ declare module "ant-design-vue/types/ant-design-vue.d" {
   }
   export interface IButtonScopedSlots {}
   export interface IButtonPublicMembers {}
-  export interface IButtonGroupProps extends VCProps<ResolveSubModule<typeof Button, "Group">> {
+  export interface IButtonGroupProps
+    extends VCProps<ResolveSubModule<typeof Button, "Group">> {
     [key: string]: any;
   }
   export interface IButtonGroupEvents {}

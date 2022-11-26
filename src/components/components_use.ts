@@ -5,74 +5,70 @@
  * 当需要更多组件依赖时，在该文件加入即可
  */
 export {
-  LocaleProvider,
-  ConfigProvider,
-  Layout,
-  Empty,
-  Space,
-  // Select,
-  // Input,
-  // InputNumber,
   Affix,
+  // Drawer,
+  // Tooltip,
+  Alert,
   AutoComplete,
-  // Button,
-  // Switch,
-  PageHeader,
-  Radio,
+  // Collapse,
+  Avatar,
+  Breadcrumb,
+  Carousel,
   Checkbox,
+  ConfigProvider,
+  DatePicker,
+  Divider,
+  // Icon,
+  // Popover,
+  Dropdown,
+  Empty,
   // TreeSelect,
   // Card,
   Form,
+  Layout,
+  List,
+  LocaleProvider,
+  // Spin,
+  Menu,
+  message,
+  notification,
+  // Button,
+  // Switch,
+  PageHeader,
+  Pagination,
+  Popconfirm,
+  // Upload,
+  Progress,
+  Radio,
+  Result,
+  Skeleton,
+  Space,
+  Steps,
   // Row,
   // Col,
   // Modal,
   // Table,
   Tabs,
-  // Icon,
-  // Popover,
-  Dropdown,
-  List,
-  // Collapse,
-  Avatar,
-  Breadcrumb,
-  Steps,
-  // Spin,
-  Menu,
-  // Drawer,
-  // Tooltip,
-  Alert,
   Tag,
-  Divider,
-  DatePicker,
   TimePicker,
-  // Upload,
-  Progress,
-  Skeleton,
-  Popconfirm,
-  message,
-  notification,
-  Carousel,
-  Pagination, // Tree, // FormModel,
-  Result,
 } from "ant-design-vue";
-
-export * from "./Select";
-export * from "./Tree";
-export * from "./TreeSelect";
-export * from "./Input";
-export * from "./InputNumber";
 export * from "./Badge";
 export * from "./Button";
-export * from "./Icon";
-export * from "./Collapse";
-export * from "./Table";
-export * from "./Switch";
-export * from "./Grid";
-export * from "./FormModel";
-export * from "./Spin";
 export * from "./Card";
-export * from "./Upload";
-export * from "./Popover";
-export * from "./Tooltip";
-export * from "./Modal";
+export * from "./Collapse";
 export * from "./Drawer";
+export * from "./FormModel";
+export * from "./Grid";
+export * from "./Icon";
+export * from "./Input";
+export * from "./InputNumber";
+export * from "./Modal";
+export * from "./Popover";
+export * from "./Select";
+export * from "./Spin";
+export * from "./Switch";
+export * from "./Table";
+export * from "./Tooltip";
+export * from "./Tree";
+export * from "./TreeSelect";
+export * from "./Upload";

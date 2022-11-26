@@ -1,7 +1,11 @@
 /* eslint-disable no-redeclare */
+import {
+  IInputGroupEvents,
+  IInputGroupProps,
+  IInputGroupPublicMembers,
+} from "ant-design-vue";
 import type { InputGroup } from "ant-design-vue/types/input/input-group";
 import { TypeTsxProps, VCProps } from "../../helper";
-import { IInputGroupPublicMembers, IInputGroupProps, IInputGroupEvents } from "ant-design-vue";
 
 declare module "ant-design-vue/types/ant-design-vue.d" {
   export interface IInputGroupProps extends VCProps<InputGroup, false> {}

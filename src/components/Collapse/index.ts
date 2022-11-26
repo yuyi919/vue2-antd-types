@@ -1,6 +1,6 @@
 /* eslint-disable no-redeclare */
-import { VCProps, VueComponent2 } from "../../helper";
 import { Collapse as AntCollapse } from "ant-design-vue";
+import { VCProps, VueComponent2 } from "../../helper";
 
 export interface ICollapseProps extends VCProps<AntCollapse, false> {}
 
@@ -21,7 +21,10 @@ export { AntCollapse };
 
 export interface ICollapsePanelProps
   // eslint-disable-next-line no-use-before-define
-  extends VCProps<import("ant-design-vue/types/collapse/collapse-panel").CollapsePanel, false> {}
+  extends VCProps<
+    import("ant-design-vue/types/collapse/collapse-panel").CollapsePanel,
+    false
+  > {}
 
 export interface ICollapsePanelEvents {}
 export interface ICollapsePanelScopedSlots {}

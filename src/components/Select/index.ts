@@ -1,17 +1,18 @@
 /* eslint-disable no-redeclare */
-import { getPropsClass, TypeTsxProps, VCProps, VueComponent2 } from "../../helper";
 import { CSSProperties } from "@yuyi919/shared-types";
 import {
-  ISelectPublicMembers,
-  ISelectProps,
   ISelectEvents,
+  ISelectProps,
+  ISelectPublicMembers,
   ISelectScopedSlots,
-  Select as AntSelect
+  Select as AntSelect,
 } from "ant-design-vue";
+import { getPropsClass, TypeTsxProps, VCProps } from "../../helper";
 import "./Option";
 
 declare module "ant-design-vue/types/ant-design-vue.d" {
-  export interface ISelectProps extends VCProps<Omit<AntSelect, "blur" | "focus">, false> {
+  export interface ISelectProps
+    extends VCProps<Omit<AntSelect, "blur" | "focus">, false> {
     dropdownStyle?: CSSProperties;
   }
   export interface ISelectEvents {
@@ -31,7 +32,8 @@ declare module "ant-design-vue/types/ant-design-vue.d" {
     deselect(value: any, option: any): void;
   }
   export interface ISelectScopedSlots {}
-  export interface ISelectPublicMembers extends Pick<AntSelect, "blur" | "focus"> {}
+  export interface ISelectPublicMembers
+    extends Pick<AntSelect, "blur" | "focus"> {}
 }
 declare module "ant-design-vue/types/select/select.d" {
   interface Select extends ISelectPublicMembers {

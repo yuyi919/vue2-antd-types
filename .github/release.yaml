@@ -22,4 +22,4 @@ changelog:
         - ci
     - title: Other Changes
       labels:
-        - '*'
+        - "*"

@@ -2,17 +2,22 @@
 import { get, set } from "lodash";
 import Vue, { CreateElement, RenderContext, VNode } from "vue";
 
-const explainGet = (o: { [x: string]: any }, k: string | number, d: any) => o[k] || d;
-const explainSet = (o: { [x: string]: any }, k: string | number, v: any) => (o[k] = v);
+const explainGet = (o: { [x: string]: any }, k: string | number, d: any) =>
+  o[k] || d;
+const explainSet = (o: { [x: string]: any }, k: string | number, v: any) =>
+  (o[k] = v);
 
-export function hackRender<Instance extends Vue, Functional extends boolean = false>(
+export function hackRender<
+  Instance extends Vue,
+  Functional extends boolean = false,
+>(
   component: { new (...args: any[]): Instance },
   hackNode: (
     vnodes: VNode | VNode[],
     context?: Functional extends false ? Instance : RenderContext,
-    h?: CreateElement
+    h?: CreateElement,
   ) => VNode | VNode[],
-  isFunctional?: Functional
+  isFunctional?: Functional,
 ): { new (...args: any[]): Instance } {
   hackFromVueComponent(component, "render", (render) => {
     if (render instanceof Function) {
@@ -31,14 +36,17 @@ export function hackRender<Instance extends Vue, Functional extends boolean = fa
   });
   return component;
 }
-export function extendRender<Instance extends Vue, Functional extends boolean = false>(
+export function extendRender<
+  Instance extends Vue,
+  Functional extends boolean = false,
+>(
   component: { new (...args: any[]): Instance },
   hackNode: (
     vnodes: VNode | VNode[],
     context?: Functional extends false ? Instance : RenderContext,
-    h?: CreateElement
+    h?: CreateElement,
   ) => VNode | VNode[],
-  isFunctional?: Functional
+  isFunctional?: Functional,
 ) {
   return hackFromVueComponent(component, "render", (render) => {
     if (render instanceof Function) {
@@ -63,7 +71,7 @@ export function hackFromVueComponent(
   hack?: (v: any) => any,
   getter?: any,
   setter?: any,
-  debug?: boolean
+  debug?: boolean,
 ): any {
   getter = getter || (key.indexOf(".") > -1 ? get : explainGet);
   setter = setter || (key.indexOf(".") > -1 ? set : explainSet);
@@ -76,20 +84,41 @@ export function hackFromVueComponent(
       }
     } else if (component.mixins instanceof Array) {
       for (const mixin of component.mixins) {
-        if (mixin && !!(r = hackFromVueComponent(mixin, key, hack, getter, setter, debug))) {
+        if (
+          mixin &&
+          !!(r = hackFromVueComponent(mixin, key, hack, getter, setter, debug))
+        ) {
           debug && console.log("from mixins", r);
           return r;
         }
       }
     } else if (component.extends) {
-      if ((r = hackFromVueComponent(component.extends, key, hack, getter, setter, debug))) {
+      if (
+        (r = hackFromVueComponent(
+          component.extends,
+          key,
+          hack,
+          getter,
+          setter,
+          debug,
+        ))
+      ) {
         debug && console.log("from mixins", r);
         return r;
       }
     }
     if (!r) {
       for (const skey of ["options"]) {
-        if ((r = hackFromVueComponent(component[skey], key, hack, getter, setter, debug))) {
+        if (
+          (r = hackFromVueComponent(
+            component[skey],
+            key,
+            hack,
+            getter,
+            setter,
+            debug,
+          ))
+        ) {
           debug && console.log("from options", r);
           return r;
         }
@@ -100,6 +129,10 @@ export function hackFromVueComponent(
   }
   return null;
 }
-export function getFromVueComponent(component: any, key: string, debug?: boolean) {
+export function getFromVueComponent(
+  component: any,
+  key: string,
+  debug?: boolean,
+) {
   return hackFromVueComponent(component, key, void 0, void 0, void 0, debug);
 }

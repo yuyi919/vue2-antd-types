@@ -87,7 +87,7 @@ export type VueComponent2<
   Emits = Types.Recordable,
   ScopedSlots = Types.Recordable,
   Public = Types.Recordable,
-  VueType extends VueConstructor = VueConstructor
+  VueType extends VueConstructor = VueConstructor,
 > = InternalVueComponent2<IProps, Emits, ScopedSlots, Public> & VueType;
 
 export type { TypedPropGroup };

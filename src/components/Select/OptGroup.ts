@@ -1,15 +1,16 @@
 /* eslint-disable no-redeclare */
-import { TypeTsxProps, VCProps, VueComponent2 } from "../../helper";
 import {
   ISelectOptionGroupEvents,
   ISelectOptionGroupProps,
   ISelectOptionGroupPublicMembers,
-  ISelectOptionGroupScopedSlots
+  ISelectOptionGroupScopedSlots,
 } from "ant-design-vue";
 import type { OptionGroup as AntSelectOptionGroup } from "ant-design-vue/types/select/option-group";
+import { TypeTsxProps, VCProps } from "../../helper";
 
 declare module "ant-design-vue/types/ant-design-vue.d" {
-  export interface ISelectOptionGroupProps extends VCProps<AntSelectOptionGroup, false> {}
+  export interface ISelectOptionGroupProps
+    extends VCProps<AntSelectOptionGroup, false> {}
   export interface ISelectOptionGroupEvents {
     change: any;
   }

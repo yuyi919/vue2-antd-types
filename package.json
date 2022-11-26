@@ -1,6 +1,6 @@
 {
   "name": "@yuyi919/vue2-antd-types",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/yuyi919/vue2-antd-types",
@@ -9,9 +9,9 @@
     "url": "git://github.com/yuyi919/vue2-antd-types.git"
   },
   "license": "MIT",
-  "author": "u/yuyi919",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "author": "yuyi919",
+  "main": "index.js",
+  "types": "index.d.ts",
   "files": [
     "src/",
     "!src/test/",
@@ -63,10 +63,10 @@
     "typescript": "^4.5.2",
     "vue": "^2.7.12"
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "peerDependencies": {
     "ant-design-vue": ">= 1 && < 2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,9 +1,10 @@
 /* eslint-disable no-redeclare */
 import { Drawer as AntDrawer } from "ant-design-vue";
-import { getPropsClass, VCProps, TypeTsxProps } from "../helper";
+import { getPropsClass, TypeTsxProps, VCProps } from "../helper";
 
 declare module "ant-design-vue/types/ant-design-vue.d" {
-  export interface IDrawerProps extends VCProps<Omit<AntDrawer, "maskStyle">, false> {
+  export interface IDrawerProps
+    extends VCProps<Omit<AntDrawer, "maskStyle">, false> {
     maskStyle?: any;
   }
   export interface IDrawerEvents {
@@ -21,7 +22,7 @@ export const DrawerProps = getPropsClass(
   {
     destroyOnClose: true,
   },
-  "maskClosable"
+  "maskClosable",
 );
 
 export { AntDrawer };

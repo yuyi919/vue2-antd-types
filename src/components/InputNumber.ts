@@ -1,6 +1,6 @@
 /* eslint-disable no-redeclare */
-import { getPropsClass, VCProps, VueComponent2 } from "../helper";
 import { InputNumber as AntInputNumber } from "ant-design-vue";
+import { getPropsClass, VCProps, VueComponent2 } from "../helper";
 
 export interface IInputNumberProps extends VCProps<AntInputNumber, false> {}
 export interface IInputNumberEvents {

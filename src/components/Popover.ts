@@ -1,6 +1,6 @@
 /* eslint-disable no-redeclare */
+import { Popconfirm, Popover } from "ant-design-vue";
 import { getPropsClass, TypeTsxProps, VCProps } from "../helper";
-import { Popover, Popconfirm } from "ant-design-vue";
 
 declare module "ant-design-vue/types/ant-design-vue.d" {
   interface IPopoverProps extends VCProps<Popover, false> {

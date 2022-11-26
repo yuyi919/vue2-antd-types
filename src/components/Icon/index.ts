@@ -1,4 +1,9 @@
-import { Icon, IIconProps, IIconPublicMembers, IIconEvents } from "ant-design-vue";
+import {
+  Icon,
+  IIconEvents,
+  IIconProps,
+  IIconPublicMembers,
+} from "ant-design-vue";
 import { getPropsClass, TypeTsxProps, VCProps } from "../../helper";
 
 declare module "ant-design-vue/types/ant-design-vue.d" {

@@ -1,7 +1,7 @@
 /* eslint-disable no-redeclare */
+import { CSSProperties } from "@yuyi919/shared-types";
 import { Modal as AntModal } from "ant-design-vue";
 import { getPropsClass, TypeTsxProps } from "../../helper";
-import { CSSProperties, Types } from "@yuyi919/shared-types";
 
 declare module "ant-design-vue/types/ant-design-vue.d" {
   export interface IModalProps {
